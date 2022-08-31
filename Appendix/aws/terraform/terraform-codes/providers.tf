@@ -8,10 +8,10 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "<생성할 Terraform Backend 버킷명>"
+    bucket = "seank-s3-test-tf"
     key = "terraform.tfstate"
     region = "ap-northeast-2"
-    dynamodb_table = "<생성할 Terraform Backend 테이블명>"
+    dynamodb_table = "seank-dynamodb-test-tf-lock"
     encrypt = "true"
   }
 }

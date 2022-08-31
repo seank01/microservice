@@ -1,9 +1,9 @@
 resource "aws_s3_bucket" "test-s3-tf-state" {
 
-  bucket = "<생성할 Terraform Backend 버킷명>"
+  bucket = "seank-s3-test-tf"
 
   tags = {
-    "Name" = "<생성할 Terraform Backend 버킷명>"
+    "Name" = "seank-s3-test-tf"
   }
   
 }
@@ -11,7 +11,7 @@ resource "aws_s3_bucket" "test-s3-tf-state" {
 resource "aws_dynamodb_table" "test-ddb-tf-lock" {
 
   depends_on   = [aws_s3_bucket.test-s3-tf-state]
-  name         = "<생성할 Terraform Backend 테이블명>"
+  name         = "seank-dynamodb-test-tf-lock"
   billing_mode = "PAY_PER_REQUEST"
   hash_key     = "LockID"
 
@@ -21,7 +21,7 @@ resource "aws_dynamodb_table" "test-ddb-tf-lock" {
   }
 
   tags = {
-    "Name" = "<생성할 Terraform Backend 테이블명>"
+    "Name" = "seank-dynamodb-test-tf-lock"
   }
 
 }
