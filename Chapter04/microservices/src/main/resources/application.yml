@@ -2,9 +2,9 @@ spring:
     application: 
         name: jpaservice
     datasource:
-        url: jdbc:mysql://<RDS Endpoint>.ap-northeast-2.rds.amazonaws.com:3306/employees?useSSL=false
-        username: <Your username>
-        password: <Your password>
+        url: jdbc:mysql://test-rds-mysql.cv2tykn3ch6j.ap-northeast-2.rds.amazonaws.com.ap-northeast-2.rds.amazonaws.com:3306/employees?useSSL=false
+        username: admin
+        password: 1234qwer
     jpa:
         hibernate:
             ddl-auto: update

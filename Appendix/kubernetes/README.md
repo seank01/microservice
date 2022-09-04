@@ -86,13 +86,13 @@ $ aws iam create-policy \
 ### 4.2 eksctl을 통한 IAM Role 설정
 ```
 $ eksctl utils associate-iam-oidc-provider --region=ap-northeast-2 \
-  --cluster=<사용자의 EKS Cluster명> --approve
+  --cluster=test-eks-cluster --approve
 $ eksctl create iamserviceaccount \
-  --cluster=<사용자의 EKS Cluster명> \
+  --cluster=test-eks-cluster \
   --namespace=kube-system \
   --name=aws-load-balancer-controller \
   --role-name "AmazonEKSLoadBalancerControllerRole" \
-  --attach-policy-arn=arn:aws:iam::<사용자의 12자리 AWS 계정 ID>:policy/AWSLoadBalancerControllerIAMPolicy \
+  --attach-policy-arn=arn:aws:iam::755233231675:policy/AWSLoadBalancerControllerIAMPolicy \
   --approve
 ```
 ### 4.3 AWS Load Balancer Controller Helm Chart 설치
@@ -108,7 +108,7 @@ $ helm repo update
 ```
 $ helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
   -n kube-system \
-  --set clusterName=<사용자의 EKS Cluster명> \
+  --set clusterName=test-eks-cluster \
   --set serviceAccount.create=false \
   --set serviceAccount.name=aws-load-balancer-controller 
 ```
