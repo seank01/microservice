@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: jpaservice
-          image: 938840855523.dkr.ecr.ap-northeast-2.amazonaws.com/jpaservice:1.0
-          #imagePullPolicy: Always
+          image: 938840855523.dkr.ecr.ap-northeast-2.amazonaws.com/jpaservice:1.1
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
 ---
