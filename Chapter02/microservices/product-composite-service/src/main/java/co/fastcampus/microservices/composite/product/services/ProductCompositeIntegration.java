@@ -86,6 +86,7 @@ public class ProductCompositeIntegration implements ProductService {
             return product;
 
         } catch (HttpClientErrorException ex) {
+
             throw handleHttpClientException(ex);
         }
     }
